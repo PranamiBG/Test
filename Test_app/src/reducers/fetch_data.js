@@ -1,12 +1,10 @@
-import FETCH_DATA from '../actions';
-import FETCH_DATA_SUCCESS from '../actions';
-import FETCH_DATA_FAILURE from '../actions';
+import { FETCH_DATA, FETCH_DATA_FAILURE, FETCH_DATA_SUCCESS } from '../actions';
 
 const initialState = {
   result_array:[],
   isFetching: false,
   error: false
-}
+};
 
 export default function fetchReducer(state = initialState, action) {
 
@@ -14,9 +12,8 @@ export default function fetchReducer(state = initialState, action) {
       case FETCH_DATA: {
         return {
           ...state,
-          isFetching: true,
-
-        }
+          isFetching: true
+        };
       }
 
       case FETCH_DATA_SUCCESS: {
@@ -35,7 +32,7 @@ export default function fetchReducer(state = initialState, action) {
       }
 
       default:
-        return state
+        return state;
     }
 
 }
